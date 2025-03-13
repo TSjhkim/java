@@ -1,0 +1,95 @@
+/* CSS 변수선언 방법 */
+:root{
+    --primaryColor:green;
+    --errorColor:orange;
+}
+
+html{
+    box-sizing: border-box;
+    /* 컨텐츠 크기 결정 시 패딩&테두리 포함하여 결정. 일반적으로 사용 */
+}
+
+body{
+    display: flex;
+    align-items: center;
+    /* 수직중앙 */
+    justify-content: center;
+    /* 수평중앙 */
+    min-height: 100vh;
+    /* 뷰포트 높이를 100%로 지정, 가변적으로 변하게 하기위해 사용 */
+    background-color: white;
+}
+
+#wrapper{
+    width: 420px;
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.2);
+    /* 수평,수직,블러값 */
+}
+
+h2{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.inputGroup{
+    padding: 8px 12px;
+    /* 위아래 8px, 좌우 12px */
+}
+
+.inputGroup label{
+    display: block;
+    padding: 12px 0;
+}
+
+.inputGroup input{
+    display: block;
+    /* inline은 width 와 height 설정 불가 */
+    /* inline-block은 영역너비 가지며 가로줄로 쌓임 */
+    width: 93%;
+    padding: 12px;
+    border: 2px solid #e2e2e2;
+    font-size: 16px;
+}
+
+/* input태그 클릭 시 테두리 변경 효과 */
+.inputGroup input:focus{
+    outline:none;
+    border-color: #777;
+}
+
+/* JS로 가상의 CSS선택자 설정 */
+.inputGroup.valid input{
+    border-color:var(--primaryColor);
+}
+
+.inputGroup.invalid input{
+    border-color:var(--errorColor);
+    visibility: visible;
+}
+
+.inputGroup .helperText{
+    display: block;
+    padding-top: 8px;
+}
+
+.inputGroup.valid .helperText{
+    visibility: hidden;
+}
+
+.inputGroup.invalid .helperText{
+    color:var(--errorColor);
+}
+
+#wrapper button{
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    height: 50px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    background-color:var(--primaryColor);
+    border: 2px solid var(--primaryColor);
+    color: white;
+    /* 텍스트 색깔 */
+    cursor: pointer;
+}
