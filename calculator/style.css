@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #2c3e50;
+    background-color: #f0f8ff;
+    animation: fadein 1.5s;
+}
+
+/* 새로고침 시 서서히 나타나는 효과 */
+/* 위 animation에 입력후 아래 @keyframes 의 fadein에서 정의해야함 */
+@keyframes fadein {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+.container{
+    display: block;
+    text-align: center;
+}
+
+h1{
+    margin-bottom: 0;
+    font-size: 300%;
+    color: #34495e;
+}
+
+.calculator{
+    display: inline-block;
+
+}
+
+/* 계산기 맨위 입력박스 */
+input{
+    /* 입력 방향을 왼쪽에서 오른쪽으로 설정 */
+    direction: ltr;
+    background-color: #ffffff;
+    width: 80vw;
+    /* 부모태그의 폰트사이즈의 3배 */
+    font-size: 3rem;
+    color: #2c3e50;
+    border: 2px solid #bdc3c7;
+    border-radius: 0.5rem;
+}
+
+table{
+    /* display block 요소를 중앙에 위치할때 사용 */
+    margin: 0 auto;
+}
+
+button{
+    background-color: #ecf0f1;
+    /* 단위들은 모두 가변적인 단위, PX과 같이 정적이지 않음 */
+    width: 20vw;
+    height: 10vw;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    color: #2c3e50;
+    transition: box-shadow 0.3s ease, transform 0.5s ease;
+}
+
+/* 버튼을 눌렀을때 */
+button:active{
+    transform: scale(0.90);
+    box-shadow: 3px 2px 22px 1px rgba(19,145,137,0.9);
+}
+
+button:hover{
+    transform: scale(0.95);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
